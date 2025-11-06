@@ -1,125 +1,125 @@
-# 🐢 海龟汤问答游戏后端
+# 🐢 Turtle Soup Backend API
 
-![后端服务](https://img.shields.io/badge/后端-API服务-blue)
+![Backend Service](https://img.shields.io/badge/Backend-API_Service-blue)
 ![Node.js](https://img.shields.io/badge/Node.js-Express-green)
-![Vercel](https://img.shields.io/badge/部署-Vercel-black)
+![Vercel](https://img.shields.io/badge/Deployment-Vercel-black)
 
-## 项目介绍
+## Project Overview
 
-这是海龟汤问答游戏的后端API服务，为前端游戏提供问答处理、谜题生成和用户认证功能。该服务使用Express.js构建，并部署在Vercel平台上。
+This is the backend API service for the Turtle Soup puzzle game, providing question answering, puzzle generation, and user authentication functionality for the frontend game. The service is built with Express.js and deployed on Vercel platform.
 
-### API服务
+### API Service
 
-[API服务地址](https://turtle-soup-backend-hsry.vercel.app/)
+URL: https://turtle-soup-backend-hsry.vercel.app/
 
-## 功能特点
+## Features
 
-- 通义千问API集成，提供智能问答服务
-- 谜题生成和管理
-- 用户认证（简化版）
-- CORS配置，支持前端跨域请求
-- Vercel无服务器部署
+- Integration with Qwen API for intelligent question answering
+- Puzzle generation and management
+- User authentication (simplified version)
+- CORS configuration for frontend cross-domain requests
+- Serverless deployment on Vercel
 
-## 技术架构
+## Technical Architecture
 
-- **后端框架**：Express.js
-- **运行环境**：Node.js
-- **API集成**：阿里云通义千问
-- **部署平台**：Vercel
-- **前端通信**：CORS支持
+- **Backend Framework**: Express.js
+- **Runtime**: Node.js
+- **API Integration**: Alibaba Cloud Qwen
+- **Deployment Platform**: Vercel
+- **Frontend Communication**: CORS support
 
-## API端点
+## API Endpoints
 
-### 健康检查
-- `GET /` - 返回服务状态信息
+### Health Check
+- `GET /` - Returns service status information
 
-### 聊天API
-- `POST /api/qwen/chat` - 与通义千问模型交互
-  - 请求体: `{ "prompt": "用户输入的问题" }`
-  - 返回: `{ "result": "AI回答内容" }`
+### Chat API
+- `POST /api/qwen/chat` - Interact with Qwen model
+  - Request body: `{ "prompt": "User input question" }`
+  - Response: `{ "result": "AI response content" }`
 
-### 认证API
-- `POST /api/auth/login` - 用户登录
-  - 请求体: `{ "username": "用户名", "password": "密码" }`
-  - 返回: 包含访问令牌的用户信息
+### Authentication API
+- `POST /api/auth/login` - User login
+  - Request body: `{ "username": "username", "password": "password" }`
+  - Response: User information with access token
 
-- `POST /api/auth/register` - 用户注册
-  - 请求体: `{ "username": "用户名", "password": "密码" }`
-  - 返回: 包含访问令牌的用户信息
+- `POST /api/auth/register` - User registration
+  - Request body: `{ "username": "username", "password": "password" }`
+  - Response: User information with access token
 
-## 本地开发
+## Local Development
 
-### 前置条件
+### Prerequisites
 
-- Node.js 14.x 或更高版本
-- npm 或 yarn
-- 通义千问API密钥（可选）
+- Node.js 14.x or higher
+- npm or yarn
+- Qwen API key (optional)
 
-### 安装步骤
+### Installation Steps
 
-1. 克隆仓库
+1. Clone repository
 ```bash
 git clone https://github.com/VersaXu/turtle-soup-backend.git
 cd turtle-soup-backend
 ```
 
-2. 安装依赖
+2. Install dependencies
 ```bash
 npm install
-# 或
+# or
 yarn install
 ```
 
-3. 创建环境变量文件
+3. Create environment variables file
 ```bash
 echo "QWEN_API_KEY=your_api_key_here" > .env
 ```
 
-4. 启动开发服务器
+4. Start development server
 ```bash
 npm start
-# 或
+# or
 yarn start
 ```
 
-服务将在 http://localhost:3000 运行。
+The service will run at http://localhost:3000.
 
-## 项目结构
+## Project Structure
 
 ```
 /
-├── turtle-soup-server.js  # 主服务器文件
-├── package.json          # 项目依赖
-├── vercel.json           # Vercel部署配置
-└── .env                  # 环境变量（本地开发用）
+├── turtle-soup-server.js  # Main server file
+├── package.json          # Project dependencies
+├── vercel.json           # Vercel deployment configuration
+└── .env                  # Environment variables (for local development)
 ```
 
-## 部署
+## Deployment
 
-项目配置为在Vercel上自动部署。当代码推送到主分支时，Vercel会自动构建并部署新版本。
+The project is configured for automatic deployment on Vercel. When code is pushed to the main branch, Vercel automatically builds and deploys a new version.
 
-### 部署步骤
+### Deployment Steps
 
-1. 在Vercel上创建新项目
-2. 连接GitHub仓库
-3. 配置环境变量：
-   - `QWEN_API_KEY`: 通义千问API密钥
-   - `QWEN_BASE_URL`: API基础URL（可选）
-   - `QWEN_MODEL`: 使用的模型（可选）
-4. 部署项目
+1. Create a new project on Vercel
+2. Connect GitHub repository
+3. Configure environment variables:
+   - `QWEN_API_KEY`: Qwen API key
+   - `QWEN_BASE_URL`: API base URL (optional)
+   - `QWEN_MODEL`: Model to use (optional)
+4. Deploy the project
 
-## 配置
+## Configuration
 
-### 环境变量
+### Environment Variables
 
-- `QWEN_API_KEY`: 通义千问API密钥
-- `QWEN_BASE_URL`: 通义千问API基础URL
-- `QWEN_MODEL`: 使用的模型名称
-- `PORT`: 本地开发服务器端口
+- `QWEN_API_KEY`: Qwen API key
+- `QWEN_BASE_URL`: Qwen API base URL
+- `QWEN_MODEL`: Model name to use
+- `PORT`: Local development server port
 
-### Vercel配置
+### Vercel Configuration
 
-vercel.json文件包含Vercel部署所需的配置：
+The vercel.json file contains the configuration needed for Vercel deployment:
 
 ```json
 {
@@ -136,29 +136,29 @@ vercel.json文件包含Vercel部署所需的配置：
 }
 ```
 
-## 前端集成
+## Frontend Integration
 
-前端项目通过环境变量配置API地址：
+The frontend project configures the API address through environment variables:
 
 ```
 VITE_API_BASE_URL=https://turtle-soup-backend-hsry.vercel.app/api
 ```
 
-## 贡献指南
+## Contributing
 
-欢迎为项目做出贡献！您可以通过以下方式参与：
+Welcome to contribute to the project! You can participate through:
 
-1. 提交问题或建议
-2. 提交代码改进
-3. 增强AI问答功能
+1. Submitting issues or suggestions
+2. Contributing code improvements
+3. Enhancing AI answering capabilities
 
-## 许可证
+## License
 
 [MIT](LICENSE)
 
-## 鸣谢
+## Acknowledgments
 
-- 阿里云通义千问团队
-- Express.js社区
-- Vercel平台
-- 项目贡献者
+- Alibaba Cloud Qwen team
+- Express.js community
+- Vercel platform
+- Project contributors
